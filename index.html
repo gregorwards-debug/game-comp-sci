@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exploding Viltrumites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="start-screen">
+    <button class="start-btn start-btn-play" id="play-btn">PLAY</button>
+  </div>
+
+  <div id="character-select-screen" class="hidden">
+    <button class="char-btn char-btn-invincible" id="char-invincible" data-character="Invincible">INVINCIBLE</button>
+    <button class="char-btn char-btn-atom-eve" id="char-atom-eve" data-character="Atom Eve">ATOM EVE</button>
+    <button class="char-btn char-btn-robot" id="char-robot" data-character="Robot">ROBOT</button>
+    <button class="char-btn char-btn-omni-man" id="char-omni-man" data-character="Omni-Man">OMNI-MAN</button>
+    <button class="char-btn char-btn-back" id="char-back">BACK</button>
+    <button class="char-btn char-btn-start" id="char-start" disabled>START GAME</button>
+    <div id="char-highlight" class="char-highlight hidden"></div>
+  </div>
+
+  <div id="game-screen" class="hidden">
+
+  <header id="header">
+    <div>
+      <h1>💥 EXPLODING VILTRUMITES 💥</h1>
+      <span id="turn-counter"></span>
+    </div>
+    <div>
+      <span id="current-player-name"></span>
+    </div>
+  </header>
+
+  <main id="game-layout">
+
+    <aside id="cpu-sidebar">
+      <h2>🤖 CPU PLAYERS</h2>
+      <div id="cpu-players-list"></div>
+    </aside>
+
+    <section id="game-area">
+
+      <div id="status-banner"></div>
+
+      <div id="piles-container">
+
+        <div id="draw-pile" class="pile-card">
+          <span class="pile-emoji">🃏</span>
+          <span class="pile-label">DRAW PILE</span>
+          <span id="draw-count" class="pile-count">0</span>
+        </div>
+
+        <div class="pile-divider">⚡</div>
+
+        <div id="discard-pile" class="pile-card">
+          <span id="discard-emoji" class="pile-emoji">📂</span>
+          <span class="pile-label">DISCARD</span>
+          <span id="discard-count" class="pile-count">0</span>
+          <span id="discard-name" class="pile-subtext"></span>
+        </div>
+
+      </div>
+
+      <div id="viltrumite-attack-placement" class="hidden">
+        <p>Where do you want to place the Viltrumite Attack?</p>
+        <div id="placement-buttons"></div>
+      </div>
+
+    </section>
+
+    <aside id="player-sidebar">
+
+      <div id="player-header">
+        <h2>YOUR HAND <span id="hand-count"></span></h2>
+        <span id="player-status"></span>
+      </div>
+
+      <div id="turn-indicator"></div>
+
+      <button id="draw-button" disabled>DRAW CARD 🃏</button>
+
+      <div id="player-hand"></div>
+
+      <div id="favor-banner" class="hidden"></div>
+
+      <p id="help-text" class="help-text">Play cards or draw to end your turn.</p>
+
+    </aside>
+
+  </main>
+
+  <div id="modal-overlay" class="hidden">
+    <div id="modal-content"></div>
+  </div>
+
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
